@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept/CoreConcept.jsx";
@@ -27,7 +27,8 @@ function App() {
   }
 
   return (
-    <div>
+    // <Fragment></Fragment> the same as <></>
+    <>
       <Header />
       <main>
         <section id="core-concepts">
@@ -67,40 +68,9 @@ function App() {
             </TabButton>
           </menu>
           {tabContent}
-          {/* {!selectedTopic ? <p>Please select a topic.</p> : null}
-          {selectedTopic ? (
-            <div id="tab-content">
-              <h3>{EXAMPLES[selectedTopic].title}</h3>
-              <p>{EXAMPLES[selectedTopic].description}</p>
-              <pre>
-                <code>{EXAMPLES[selectedTopic].code}</code>
-              </pre>
-            </div>
-          ) : null} */}
-          {/* {!selectedTopic && <p>Please select a topic.</p>}
-          {selectedTopic && (
-            <div id="tab-content">
-              <h3>{EXAMPLES[selectedTopic].title}</h3>
-              <p>{EXAMPLES[selectedTopic].description}</p>
-              <pre>
-                <code>{EXAMPLES[selectedTopic].code}</code>
-              </pre>
-            </div>
-          )} */}
-          {/* {!selectedTopic ? (
-            <p>Please select a topic.</p>
-          ) : (
-            <div id="tab-content">
-              <h3>{EXAMPLES[selectedTopic].title}</h3>
-              <p>{EXAMPLES[selectedTopic].description}</p>
-              <pre>
-                <code>{EXAMPLES[selectedTopic].code}</code>
-              </pre>
-            </div>
-          )} */}
         </section>
       </main>
-    </div>
+    </>
   );
 }
 
